@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: booking-deploy
+spec:
+  replicas: {{ .Values.booking.replicas }}
+  selector:
+    matchLabels:
+      app: booking
+  template:
+    metadata:
+      labels:
+        app: booking
+    spec:
+      containers:
+      - name: booking
+        image: {{ .Values.booking.imageName }}:{{ .Values.booking.imageTag }}
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DB_TYPE
+          valueFrom:
+            configMapKeyRef:
+              name: booking-config
+              key: DB_TYPE
+
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: booking-config
+              key: DB_HOST
+
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: booking-config
+              key: DB_PORT
+
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: booking-config
+              key: DB_NAME
+
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: booking-secret
+              key: DB_USERNAME
+
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: booking-secret
+              key: DB_PASSWORD

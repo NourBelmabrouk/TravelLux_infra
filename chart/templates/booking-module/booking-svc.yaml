@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: booking-service
+  labels:
+    app: booking
+spec:
+  selector:
+      app: booking
+  ports:
+  - name: http
+    port: {{ .Values.booking.httpPort }}
+    targetPort: 3050
+  type: ClusterIP

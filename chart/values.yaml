@@ -1,0 +1,23 @@
+backend:
+  replicas: 1
+  imageName: nourbelmabrouk/travellux-api
+  imageTag: latest
+  httpPort: 3000
+
+booking:
+  replicas: 1
+  imageName: nourbelmabrouk/travellux-booking-service
+  imageTag: latest
+  httpPort: 3050
+
+mysql:
+  replicas: 1
+  imageName: mysql
+  imageTag: 5
+  httpPort: 3306
+
+frontend:
+  replicas: 1
+  imageName: nourbelmabrouk/travellux-client
+  imageTag: latest
+  httpPort: 80

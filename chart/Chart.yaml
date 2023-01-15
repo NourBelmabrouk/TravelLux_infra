@@ -1,0 +1,4 @@
+apiVersion: v2
+name: TravelLux
+description: Website that provide to travelers a convenient home and hotel baggage collection.
+version: 0.1.0

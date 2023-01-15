@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deploy
+spec:
+  replicas: {{ .Values.frontend.replicas }}
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: {{ .Values.frontend.imageName }}:{{ .Values.frontend.imageTag }}
+        ports:
+        - containerPort: 80
+        env:
+        - name: BOOKING_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: frontend-config
+              key: BOOKING_HOST
+
+        - name: BOOKING_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: frontend-config
+              key: BOOKING_PORT
+
+        - name: BACKEND_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: frontend-config
+              key: BACKEND_HOST
+
+        - name: BACKEND_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: frontend-config
+              key: BACKEND_PORT

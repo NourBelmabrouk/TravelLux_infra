@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+data:
+    BOOKING_HOST: "20.74.92.245"
+    BOOKING_PORT: "80/booking"
+    BACKEND_HOST: "20.74.92.245"
+    BACKEND_PORT: "80/api"
