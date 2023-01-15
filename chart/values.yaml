@@ -11,7 +11,7 @@ booking:
   httpPort: 3050
 
 mysql:
-  replicas: 1
+  replicas: 2
   imageName: mysql
   imageTag: 5
   httpPort: 3306
