@@ -1,13 +1,13 @@
 backend:
   replicas: 1
   imageName: nourbelmabrouk/travellux-api
-  imageTag: latest
+  imageTag: v2
   httpPort: 3000
 
 booking:
   replicas: 1
   imageName: nourbelmabrouk/travellux-booking-service
-  imageTag: latest
+  imageTag: v2
   httpPort: 3050
 
 mysql:
