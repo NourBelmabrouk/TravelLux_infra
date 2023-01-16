@@ -9,6 +9,10 @@ spec:
       app: booking
   template:
     metadata:
+      annotations:
+        prometheus.io/port: "3050"
+        prometheus.io/path: "/metrics"
+        prometheus.io/scrape: "true"
       labels:
         app: booking
     spec:
