@@ -17,6 +17,14 @@ spec:
         image: {{ .Values.backend.imageName }}:{{ .Values.backend.imageTag }}
         ports:
         - containerPort: 3000
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3000
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 3000
         env:
         - name: DB_TYPE
           valueFrom:
