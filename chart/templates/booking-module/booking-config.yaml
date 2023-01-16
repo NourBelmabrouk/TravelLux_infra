@@ -7,4 +7,4 @@ data:
     DB_HOST: "mysql-service"
     DB_PORT: "3306"
     DB_NAME: "travellux"
-    LOKI_HOST: "http://loki-grafana-loki-gateway:80/"
+    LOKI_HOST: "http://loki-grafana-loki-gateway:80"
