@@ -20,7 +20,7 @@ spec:
       - name: booking
         image: {{ .Values.booking.imageName }}:{{ .Values.booking.imageTag }}
         ports:
-        - containerPort: 3000
+        - containerPort: 3050
         env:
         - name: DB_TYPE
           valueFrom:
