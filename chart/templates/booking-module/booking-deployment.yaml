@@ -66,3 +66,9 @@ spec:
             secretKeyRef:
               name: booking-secret
               key: DB_PASSWORD
+
+        - name: LOKI_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: booking-config
+              key: LOKI_HOST
