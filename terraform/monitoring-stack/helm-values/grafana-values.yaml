@@ -1,0 +1,11 @@
+apiVersion: 1
+datasources:
+  - name: Prometheus
+    type: prometheus
+    url: http://prometheus-server:80/
+    access: proxy
+    isDefault: true
+  - name: Loki
+    type: loki
+    access: proxy
+    url: http://loki-grafana-loki-gateway:80/
