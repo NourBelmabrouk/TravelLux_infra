@@ -32,8 +32,8 @@ Any changes pushed made to the charts in the main branch will be updated in the 
 
 ### Terraform
 We used Terraform, which is an IAC tool to provision infrastructure, to build 2 microstacks:
- - First Stack: We provisioned an AKS cluster and set-up the first Helm charts of our application.
- - Second Stack: We created the observability tools for our application which are Prometheus, Grafana and Loki.
+ - Application Stack: We provisioned an AKS cluster and set-up the first Helm charts of our application.
+ - Monitoring Stack: We created the observability tools for our application which are Prometheus, Grafana and Loki.
 
 ### Observability tools
 
